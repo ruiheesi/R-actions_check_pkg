@@ -63,6 +63,7 @@ if [ "$1" = "all" ]; then
         
         echo "\e[33m\e[1mGenerating NAMESPACE file"
         Rscript -e 'library(devtools);document()'
+        echo $(ls)
         
     else 
         echo "\e[31m\e[1mDESCRIPTION file does not exist."
