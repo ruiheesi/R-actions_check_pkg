@@ -9,7 +9,7 @@ apt-get install -y r-base r-base-dev r-cran-xml r-cran-rjava libcurl4-openssl-de
 apt-get install -y libssl-dev libxml2-dev openjdk-7-* libgdal-dev libproj-dev libgsl-dev
 apt-get install -y xml2 default-jre default-jdk mesa-common-dev libglu1-mesa-dev freeglut3-dev 
 apt-get install -y mesa-common-dev libx11-dev r-cran-rgl r-cran-rglpk r-cran-rsymphony r-cran-plyr 
-apt-get install -y  r-cran-reshape  r-cran-reshape2 r-cran-rmysql
+apt-get install -y  r-cran-reshape  r-cran-reshape2 r-cran-rmysql r-cran-devtools
 
 echo "\e[33m\e[1mR session information"
 Rscript -e 'sessionInfo()'
@@ -51,6 +51,7 @@ if [ "$1" = "all" ]; then
         version=$(grep -Po 'Version:(.*)' DESCRIPTION)
         package=${package##Package: }
         version=${version##Version: }
+        
 
         echo "\e[33m\e[1mStart package check and test for ${package}_${version}"
         if [ -f "${package}_${version}.tar.gz" ]; then
@@ -59,6 +60,10 @@ if [ "$1" = "all" ]; then
             echo "\e[31m\e[1mPackage did not build properly, no package to test."
             # exit 1 
         fi
+        
+        echo "\e[33m\e[1mGenerating NAMESPACE file"
+        Rscript -e 'library(devtools);document()'
+        
     else 
         echo "\e[31m\e[1mDESCRIPTION file does not exist."
         exit 1
