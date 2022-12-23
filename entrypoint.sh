@@ -5,7 +5,7 @@ cd $3
 echo "\e[1mInstalling R and dependencies"
 apt-get update
 
-R_version=4.1.3;
+R_version=4.1.3
 # DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
 
 apt-get install -y --no-install-recommends \
