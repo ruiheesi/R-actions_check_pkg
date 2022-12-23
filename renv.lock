@@ -138,48 +138,6 @@
       "Hash": "89e8144e21da34e26b7c05945cefa3ca",
       "Requirements": []
     },
-    "GeomxTools": {
-      "Package": "GeomxTools",
-      "Version": "3.2.0",
-      "Source": "Bioconductor",
-      "git_url": "https://git.bioconductor.org/packages/GeomxTools",
-      "git_branch": "master",
-      "git_last_commit": "326d969",
-      "git_last_commit_date": "2022-04-28",
-      "Hash": "d85f03e0d1806264363eb7ebb14463ef",
-      "Requirements": [
-        "Biobase",
-        "BiocGenerics",
-        "EnvStats",
-        "GGally",
-        "NanoStringNCTools",
-        "S4Vectors",
-        "SeuratObject",
-        "data.table",
-        "dplyr",
-        "ggplot2",
-        "lmerTest",
-        "readxl",
-        "reshape2",
-        "rjson",
-        "rlang",
-        "stringr"
-      ]
-    },
-    "IRanges": {
-      "Package": "IRanges",
-      "Version": "2.28.0",
-      "Source": "Bioconductor",
-      "git_url": "https://git.bioconductor.org/packages/IRanges",
-      "git_branch": "RELEASE_3_14",
-      "git_last_commit": "d85ee90",
-      "git_last_commit_date": "2021-10-26",
-      "Hash": "8299b0f981c924a2b824be548f836e9d",
-      "Requirements": [
-        "BiocGenerics",
-        "S4Vectors"
-      ]
-    },
     "MASS": {
       "Package": "MASS",
       "Version": "7.3-55",
@@ -379,23 +337,6 @@
         "rgeos",
         "rlang",
         "sp"
-      ]
-    },
-    "SpatialDecon": {
-      "Package": "SpatialDecon",
-      "Version": "1.4.3",
-      "Source": "Bioconductor",
-      "git_url": "https://git.bioconductor.org/packages/SpatialDecon",
-      "git_branch": "RELEASE_3_14",
-      "git_last_commit": "72c2c83",
-      "git_last_commit_date": "2021-11-02",
-      "Hash": "4cf4419418b6d3f35617f08b94b9bbe0",
-      "Requirements": [
-        "Biobase",
-        "GeomxTools",
-        "Matrix",
-        "SeuratObject",
-        "repmis"
       ]
     },
     "XVector": {
