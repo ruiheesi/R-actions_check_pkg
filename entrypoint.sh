@@ -6,8 +6,7 @@ echo "\e[1mInstalling R and dependencies"
 apt-get update
 
 R_version=4.1.3
-# DEBIAN_FRONTEND=noninteractive apt-get install -y r-base
-
+DEBIAN_FRONTEND=noninteractive 
 apt-get install -y --no-install-recommends \
   r-base-core=${R_version} \
   r-base-html=${R_version} \
