@@ -57,7 +57,10 @@ RUN apt -y install libcurl4-openssl-dev \
                     libssl-dev \
                     libpng-dev \
                     libhdf5-dev \
-		    libquadmath0
+		    libquadmath0 \
+		    libtiff5-dev \
+		    libjepg-dev \
+		    libfreetype6-dev
 		    
 RUN echo "Installing libgfortran3" && \
 	dpkg -i libgfortran3_6.4.0-17ubuntu1_amd64.deb
