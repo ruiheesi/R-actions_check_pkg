@@ -16,12 +16,7 @@ RUN apt-get update \
 	  && apt-get install -y --no-install-recommends \
       software-properties-common \
       dirmngr \
-      ed \
-      less \
-      locales \
-      vim-tiny \
-      wget curl libcurl4-openssl-dev \
-      ca-certificates \
+	curl libcurl4-openssl-dev \
     && add-apt-repository --enable-source --yes "ppa:marutter/rrutter4.0" \
     && add-apt-repository --enable-source --yes "ppa:c2d4u.team/c2d4u4.0+"
 
@@ -45,8 +40,7 @@ RUN apt-get update \
       libxext6 \
       libsm6 \
       libice6 \
-      r-cran-png \
-      xdg-utils libxt-dev xorg-dev libcairo2 libcairo2-dev libpango1.0-dev firefox \
+      xdg-utils libxt-dev xorg-dev libcairo2 libcairo2-dev libpango1.0-dev \
     && rm -rf /var/lib/apt/lists/*
 
 
@@ -55,8 +49,10 @@ RUN apt -y install libcurl4-openssl-dev \
                     libxml2-dev \
                     libssl-dev \
                     libpng-dev \
-                    libhdf5-dev \
-                    libgfortran3
+                    libhdf5-dev
+		    
+RUN apt-get install gcc \
+	&& apt-get install -y --no-install-recommends libgfortran3
 
 ENV DEBIAN_FRONTEND=noninteractive
 
