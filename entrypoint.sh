@@ -12,7 +12,7 @@ apt-get install -y --no-install-recommends \
   r-base-core=${R_version} \
   r-base-html=${R_version} \
   r-doc-html=${R_version} \
-  r-base-dev=${R_version};
+  r-base-dev=${R_version}
 
 apt-get install -y r-cran-xml r-cran-rjava libcurl4-openssl-dev
 apt-get install -y libssl-dev libxml2-dev openjdk-7-* libgdal-dev libproj-dev libgsl-dev
