@@ -140,9 +140,9 @@
     },
     "GeomxTools": {
       "Package": "GeomxTools",
-      "Version": "3.1.1",
-      "Source": "git",
-      "git_url": "https://github.com/Nanostring-Biostats/GeomxTools.git",
+      "Version": "3.2.0",
+      "Source": "Bioconductor",
+      "git_url": "https://git.bioconductor.org/packages/GeomxTools",
       "git_branch": "master",
       "git_last_commit": "326d969",
       "git_last_commit_date": "2022-04-28",
