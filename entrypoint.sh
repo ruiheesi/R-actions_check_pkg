@@ -28,6 +28,11 @@ if [ "$1" = "build" ]; then
     R CMD build $3
 fi
 
+
+echo "\e[33m\e[1mGenerating NAMESPACE file"
+Rscript -e 'library(devtools);document()'
+echo $(ls)
+
 # Build and check
 if [ "$1" = "all" ]; then
     echo "\e[33m\e[1mRunning all tasks"
@@ -68,10 +73,7 @@ if [ "$1" = "all" ]; then
             echo "\e[31m\e[1mPackage did not build properly, no package to test."
             # exit 1 
         fi
-        
-        echo "\e[33m\e[1mGenerating NAMESPACE file"
-        Rscript -e 'library(devtools);document()'
-        echo $(ls)
+       
         
     else 
         echo "\e[31m\e[1mDESCRIPTION file does not exist."
