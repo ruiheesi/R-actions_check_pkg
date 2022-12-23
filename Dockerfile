@@ -69,10 +69,10 @@ ENV R_BASE_VERSION 4.1.3
 RUN apt-get update \
         && apt-get install -y --no-install-recommends \
                 libopenblas0-pthread \
-                r-base=${R_BASE_VERSION}-* \
-                r-base-dev=${R_BASE_VERSION}-* \
-                r-base-core=${R_BASE_VERSION}-* \
-                r-recommended=${R_BASE_VERSION}-*
+                r-base=${R_BASE_VERSION} \
+                r-base-dev=${R_BASE_VERSION} \
+                r-base-core=${R_BASE_VERSION} \
+                r-recommended=${R_BASE_VERSION}
 
 ENV RENV_VERSION 0.16.0
 
