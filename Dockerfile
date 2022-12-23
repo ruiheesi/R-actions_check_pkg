@@ -51,8 +51,7 @@ RUN apt -y install libcurl4-openssl-dev \
                     libpng-dev \
                     libhdf5-dev
 		    
-RUN apt-get install gcc \
-	&& apt-get install -y --no-install-recommends libgfortran3
+RUN apt-get install -y --no-install-recommends libgfortran3
 
 ENV DEBIAN_FRONTEND=noninteractive
 
