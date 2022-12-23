@@ -59,7 +59,7 @@ RUN apt -y install libcurl4-openssl-dev \
                     libhdf5-dev \
 		    libquadmath0 \
 		    libtiff5-dev \
-		    libjepg-dev \
+		    libjpeg-dev \
 		    libfreetype6-dev
 		    
 RUN echo "Installing libgfortran3" && \
