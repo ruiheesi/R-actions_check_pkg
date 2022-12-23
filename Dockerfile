@@ -12,6 +12,15 @@ RUN apt-get update \
       fonts-texgyre libx11-dev\
 	  && rm -rf /var/lib/apt/lists/*
 
+RUN echo "Downloading gcc-6-base" && \
+	wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/gcc-6-base_6.4.0-17ubuntu1_amd64.deb && \
+	echo "Downloading libgfortran3" && \ 
+	wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/libgfortran3_6.4.0-17ubuntu1_amd64.deb && \	
+	echo "Installing gcc-6-base" && \
+	sudo dpkg -i gcc-6-base_6.4.0-17ubuntu1_amd64.deb && \ 
+	echo "Installing libgfortran3" && \
+	sudo dpkg -i libgfortran3_6.4.0-17ubuntu1_amd64.deb
+
 RUN apt-get update \
 	  && apt-get install -y --no-install-recommends \
       software-properties-common \
@@ -50,8 +59,6 @@ RUN apt -y install libcurl4-openssl-dev \
                     libssl-dev \
                     libpng-dev \
                     libhdf5-dev
-		    
-RUN apt-get install -y --no-install-recommends libgfortran3
 
 ENV DEBIAN_FRONTEND=noninteractive
 
