@@ -5,19 +5,24 @@ cd $3
 echo "\e[1mInstalling R and dependencies"
 apt-get update
 
-R_version=4.1.3
-DEBIAN_FRONTEND=noninteractive 
+export R_version=4.1.3
+
 apt-get install -y --no-install-recommends \
   r-base-core=${R_version} \
   r-base-html=${R_version} \
   r-doc-html=${R_version} \
   r-base-dev=${R_version}
 
-apt-get install -y r-cran-xml r-cran-rjava libcurl4-openssl-dev
+apt-get install -y r-cran-renv
 apt-get install -y libssl-dev libxml2-dev openjdk-7-* libgdal-dev libproj-dev libgsl-dev
 apt-get install -y xml2 default-jre default-jdk mesa-common-dev libglu1-mesa-dev freeglut3-dev 
-apt-get install -y mesa-common-dev libx11-dev r-cran-rgl r-cran-rglpk r-cran-rsymphony r-cran-plyr 
-apt-get install -y  r-cran-reshape  r-cran-reshape2 r-cran-rmysql r-cran-devtools
+apt-get install -y mesa-common-dev libx11-dev r-cran-rgl
+
+echo "\e[33m\e[1mRestore from renv.lock"
+export RENV_PATHS_LIBRARY=renv/library
+Rscript -e "renv::restore()"
+
+apt-get install -y r-cran-devtools 
 
 echo "\e[33m\e[1mR session information"
 Rscript -e 'sessionInfo()'
@@ -28,10 +33,6 @@ if [ "$1" = "build" ]; then
     R CMD build $3
 fi
 
-
-echo "\e[33m\e[1mGenerating NAMESPACE file"
-Rscript -e 'library(devtools);document()'
-echo $(ls)
 
 # Build and check
 if [ "$1" = "all" ]; then
@@ -79,4 +80,10 @@ if [ "$1" = "all" ]; then
         echo "\e[31m\e[1mDESCRIPTION file does not exist."
         exit 1
     fi
+    
 fi
+
+echo "Build and check finished, building NAMESPACE file"
+echo "\e[33m\e[1mGenerating NAMESPACE file"
+Rscript -e 'library(devtools);document()'
+echo $(ls)
