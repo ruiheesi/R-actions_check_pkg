@@ -17,9 +17,7 @@ RUN echo "Downloading gcc-6-base" && \
 	echo "Downloading libgfortran3" && \ 
 	wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/libgfortran3_6.4.0-17ubuntu1_amd64.deb && \	
 	echo "Installing gcc-6-base" && \
-	dpkg -i gcc-6-base_6.4.0-17ubuntu1_amd64.deb && \ 
-	echo "Installing libgfortran3" && \
-	dpkg -i libgfortran3_6.4.0-17ubuntu1_amd64.deb
+	dpkg -i gcc-6-base_6.4.0-17ubuntu1_amd64.deb
 
 RUN apt-get update \
 	  && apt-get install -y --no-install-recommends \
@@ -58,7 +56,11 @@ RUN apt -y install libcurl4-openssl-dev \
                     libxml2-dev \
                     libssl-dev \
                     libpng-dev \
-                    libhdf5-dev
+                    libhdf5-dev \
+		    libquadmath0
+		    
+RUN echo "Installing libgfortran3" && \
+	dpkg -i libgfortran3_6.4.0-17ubuntu1_amd64.deb
 
 ENV DEBIAN_FRONTEND=noninteractive
 
