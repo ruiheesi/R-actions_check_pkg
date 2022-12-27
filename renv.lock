@@ -55,24 +55,6 @@
       "Hash": "e57437f82a5c13263a9cf442b9796ba3",
       "Requirements": []
     },
-    "Biostrings": {
-      "Package": "Biostrings",
-      "Version": "2.62.0",
-      "Source": "Bioconductor",
-      "git_url": "https://git.bioconductor.org/packages/Biostrings",
-      "git_branch": "RELEASE_3_14",
-      "git_last_commit": "53ed287",
-      "git_last_commit_date": "2021-10-26",
-      "Hash": "a2b71046a5e013f4929b85937392a1f9",
-      "Requirements": [
-        "BiocGenerics",
-        "GenomeInfoDb",
-        "IRanges",
-        "S4Vectors",
-        "XVector",
-        "crayon"
-      ]
-    },
     "DBI": {
       "Package": "DBI",
       "Version": "1.1.3",
