@@ -56,7 +56,8 @@ RUN apt-get update && \
 		    libtiff5-dev \
 		    libjpeg-dev \
 		    libfreetype6-dev \
-		    libgfortran5
+		    libgfortran5 \
+		    libgmp-dev
 
 ENV DEBIAN_FRONTEND=noninteractive
 
