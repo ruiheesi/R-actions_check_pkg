@@ -12,14 +12,8 @@ RUN apt-get update \
       fonts-texgyre libx11-dev\
 	  && rm -rf /var/lib/apt/lists/*
 
-RUN echo "Downloading gcc-6-base" && \
-	wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/gcc-6-base_6.4.0-17ubuntu1_amd64.deb && \
-	echo "Downloading libgfortran3" && \ 
-	wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gcc-6/libgfortran3_6.4.0-17ubuntu1_amd64.deb && \	
-	echo "Installing gcc-6-base" && \
-	dpkg -i gcc-6-base_6.4.0-17ubuntu1_amd64.deb
-
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
       software-properties-common \
       dirmngr \
 	curl libcurl4-openssl-dev \
@@ -38,7 +32,8 @@ ENV LANG en_US.UTF-8
 #RUN echo "deb http://http.debian.net/debian sid main" > /etc/apt/sources.list.d/debian-unstable.list \
 #        && echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/default
 #
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && \
+	apt-get install -y --no-install-recommends \
       libx11-6 \
       libxss1 \
       libxt6 \
@@ -49,8 +44,10 @@ RUN apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN apt -y install zlib1g-dev
-RUN apt -y install libcurl4-openssl-dev \
+RUN apt-get update && \ 
+	apt -y install zlib1g-dev
+RUN apt-get update && \ 
+	apt -y install libcurl4-openssl-dev \
                     libxml2-dev \
                     libssl-dev \
                     libpng-dev \
@@ -67,7 +64,8 @@ ENV R_BASE_VERSION 4.1.3
 
 
 
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update && \ 
+	apt-get install -y --no-install-recommends \
                 libopenblas0-pthread \
                 r-base \
                 r-base-dev \
