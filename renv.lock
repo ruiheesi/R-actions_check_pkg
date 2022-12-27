@@ -11,6 +11,9 @@
   "Bioconductor": {
     "Version": "3.14"
   },
+  "Bioconductor_3_15": {
+    "Version": "3.15"
+  },
   "Packages": {
     "Biobase": {
       "Package": "Biobase",
@@ -99,7 +102,7 @@
     "IRanges": {
       "Package": "IRanges",
       "Version": "2.30.1",
-      "Source": "Bioconductor",
+      "Source": "Bioconductor_3_15",
       "Requirements": []
     },
     "GenomeInfoDb": {
