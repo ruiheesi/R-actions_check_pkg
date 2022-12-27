@@ -82,7 +82,7 @@ ENV RENV_PATHS_LIBRARY renv/library
 
 COPY renv.lock /renv.lock
 
-RUN R -e 'renv::restore();renv::install("Biostrings@2.62.0");renv::install("Nanostring-Biostats/GeomxTools@326d969aa52ee2afb13fa49ca8df92b6306619da");renv::install("Nanostring-Biostats/SpatialDecon");renv::install("Nanostring-Biostats/SpatialOmicsOverlay")'
+RUN R -e 'renv::restore();renv::update("IRanges");renv::install("Biostrings@2.62.0");renv::install("Nanostring-Biostats/GeomxTools@326d969aa52ee2afb13fa49ca8df92b6306619da");renv::install("Nanostring-Biostats/SpatialDecon");renv::install("Nanostring-Biostats/SpatialOmicsOverlay")'
 
 
 # Copies your code file from your action repository to the filesystem path `/` of the container
