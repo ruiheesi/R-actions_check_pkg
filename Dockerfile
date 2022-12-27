@@ -67,8 +67,7 @@ ENV R_BASE_VERSION 4.1.3
 
 
 
-RUN apt-get update \
-        && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
                 libopenblas0-pthread \
                 r-base \
                 r-base-dev \
