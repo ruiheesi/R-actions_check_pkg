@@ -19,8 +19,7 @@ RUN echo "Downloading gcc-6-base" && \
 	echo "Installing gcc-6-base" && \
 	dpkg -i gcc-6-base_6.4.0-17ubuntu1_amd64.deb
 
-RUN apt-get update \
-	  && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
       software-properties-common \
       dirmngr \
 	curl libcurl4-openssl-dev \
@@ -39,8 +38,7 @@ ENV LANG en_US.UTF-8
 #RUN echo "deb http://http.debian.net/debian sid main" > /etc/apt/sources.list.d/debian-unstable.list \
 #        && echo 'APT::Default-Release "testing";' > /etc/apt/apt.conf.d/default
 #
-RUN apt-get update \
-    && apt-get install -y --no-install-recommends \
+RUN apt-get install -y --no-install-recommends \
       libx11-6 \
       libxss1 \
       libxt6 \
@@ -51,7 +49,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 
-RUN apt-get update && apt -y install zlib1g-dev
+RUN apt -y install zlib1g-dev
 RUN apt -y install libcurl4-openssl-dev \
                     libxml2-dev \
                     libssl-dev \
@@ -60,10 +58,8 @@ RUN apt -y install libcurl4-openssl-dev \
 		    libquadmath0 \
 		    libtiff5-dev \
 		    libjpeg-dev \
-		    libfreetype6-dev
-		    
-RUN echo "Installing libgfortran3" && \
-	dpkg -i libgfortran3_6.4.0-17ubuntu1_amd64.deb
+		    libfreetype6-dev \
+		    libgfortran5
 
 ENV DEBIAN_FRONTEND=noninteractive
 
