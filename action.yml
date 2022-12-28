@@ -14,8 +14,8 @@ inputs:
     description: 'The path saving source code of package in repository'
     default: './'
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  runs-on: ubuntu-latest
+  container: drizzt99/vonage:1.2.0
   args:
     - ${{inputs.action}}
     - ${{inputs.needsBioc}}
